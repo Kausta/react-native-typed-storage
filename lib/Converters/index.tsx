@@ -19,6 +19,5 @@
  *
  */
 
-export { Converter, JSONConverter } from './Converters'
-export { TypedStorageBase, createCustomTypedStorage } from './TypedStorageBase'
-export { TypedStorage, createTypedStorage } from './TypedStorage'
+export { Converter } from './IConverter'
+export { JSONConverter } from './JSONConverter'

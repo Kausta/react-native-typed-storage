@@ -1,6 +1,6 @@
 /**
  * react-native-typed-storage
- * @file index.tsx
+ * @file IConverter.tsx
  * ----------------------------
  *
  * Copyright 2018 Caner Korkmaz
@@ -19,6 +19,8 @@
  *
  */
 
-export { Converter, JSONConverter } from './Converters'
-export { TypedStorageBase, createCustomTypedStorage } from './TypedStorageBase'
-export { TypedStorage, createTypedStorage } from './TypedStorage'
+export interface Converter {
+  encode<T>(value: null | T): string
+
+  decode<T>(str: string): null | T
+}

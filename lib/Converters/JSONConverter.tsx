@@ -1,6 +1,6 @@
 /**
  * react-native-typed-storage
- * @file index.tsx
+ * @file JSONConverter.tsx
  * ----------------------------
  *
  * Copyright 2018 Caner Korkmaz
@@ -19,6 +19,14 @@
  *
  */
 
-export { Converter, JSONConverter } from './Converters'
-export { TypedStorageBase, createCustomTypedStorage } from './TypedStorageBase'
-export { TypedStorage, createTypedStorage } from './TypedStorage'
+import { Converter } from './IConverter'
+
+export class JSONConverter implements Converter {
+  decode<T>(str: string): T | null {
+    return JSON.parse(str) as T
+  }
+
+  encode<T>(value: T | null): string {
+    return JSON.stringify(value)
+  }
+}

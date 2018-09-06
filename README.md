@@ -4,6 +4,8 @@
  
 Typed Storage for React Native
 - Small wrapper over Async Storage with automatic stringify, parsing
+- Note that this library doesn't get you any type safety, all it does is store objects as string, and return the stored string as object
+- Defaults to JSON for converting between objects and strings, however allows you to use your own converters
 
 ## :arrow_forward: How to Install
 
