@@ -1,0 +1,88 @@
+{
+  "name": "@kausta/typed-storage",
+  "version": "0.0.1",
+  "description": "Typed Async Storage",
+  "main": "publish/index.js",
+  "typings": "publish/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kausta/typed-storage"
+  },
+  "author": "Caner Korkmaz <Kausta> [info@canerkorkmaz.com]",
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/Kausta/typed-storage",
+  "bugs": "https://github.com/Kausta/typed-storage/issues",
+  "keywords": [
+    "react-native",
+    "utilities",
+    "storage"
+  ],
+  "scripts": {
+    "clean": "rimraf publish",
+    "tsc": "tsc -p \".\"",
+    "build": "yarn clean && yarn tsc",
+    "watch": "yarn build -w",
+    "test-unit": "echo \"No tests\"",
+    "test": "yarn lint-fix && yarn test-unit",
+    "prepublish": "yarn lint-fix && yarn build",
+    "lint": "tslint -p \".\" -t stylish",
+    "lint-fix": "tslint -p \".\" -t stylish --fix && yarn pretty",
+    "pretty": "prettier --write \"./lib/**/*.tsx\""
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/react": "^16.4.11",
+    "@types/react-native": "^0.56.10",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "husky": "^1.0.0-rc.13",
+    "jest": "23.4.2",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.14.2",
+    "react": "16.3.1",
+    "react-dom": "^16.4.2",
+    "react-native": "0.55.4",
+    "react-test-renderer": "16.3.1",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^7.1.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "tslint-react-recommended": "^1.0.15",
+    "typescript": "^3.0.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.3.1",
+    "react-native": ">=0.55.4"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testMatch": [
+      "**/?(*.)test.js?(x)"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest/setup.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.tsx": [
+      "tslint -p \".\" -t stylish --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
