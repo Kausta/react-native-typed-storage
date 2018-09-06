@@ -1,18 +1,18 @@
 {
   "name": "react-native-typed-storage",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typed Async Storage",
   "main": "publish/index.js",
   "typings": "publish/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kausta/typed-storage"
+    "url": "git+https://github.com/Kausta/react-native-typed-storage"
   },
   "author": "Caner Korkmaz <Kausta> [info@canerkorkmaz.com]",
   "license": "Apache-2.0",
   "readmeFilename": "README.md",
-  "homepage": "https://github.com/Kausta/typed-storage",
-  "bugs": "https://github.com/Kausta/typed-storage/issues",
+  "homepage": "https://github.com/Kausta/react-native-typed-storage",
+  "bugs": "https://github.com/Kausta/react-native-typed-storage/issues",
   "keywords": [
     "react-native",
     "utilities",

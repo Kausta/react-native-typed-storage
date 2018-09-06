@@ -4,8 +4,14 @@
  
 Typed Storage for React Native
 - Small wrapper over Async Storage with automatic stringify, parsing
+
+## :arrow_forward: How to Install
+
+1. Run `npm i --save react-native-typed storage` or `yarn add react-native-typed-storage` based on your preference
+2. Import TypedStorage or createTypedStorage from react-native-typed-storage
+3. WIP More Examples and Docs
  
-## :arrow_up: How to Setup
+## :arrow_up: How to Setup For Development
 
 **Step 1:** `git clone` this repo:
 
@@ -14,7 +20,7 @@ Typed Storage for React Native
 **Step 3:** Install the Application with `yarn`
 
 
-## :arrow_forward: How to Build
+## :arrow_forward: How to Build For Development
 
 1. cd to the repo
 2. Run `yarn build`
