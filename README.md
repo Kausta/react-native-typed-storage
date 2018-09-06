@@ -1,6 +1,6 @@
-# @kausta/typed-storage [![Build Status](https://travis-ci.org/Kausta/typed-storage.svg?branch=master)](https://travis-ci.org/Kausta/typed-storage) [![npm version](https://badge.fury.io/js/%40kausta%2Ftyped-storage.svg)](https://badge.fury.io/js/%40kausta%2Ftyped-storage) [![Known Vulnerabilities](https://snyk.io/test/github/Kausta/typed-storage/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Kausta/typed-storage?targetFile=package.json) [![NpmLicense](https://img.shields.io/npm/l/@kausta%2typed-storage.svg)](./LICENSE)
+# react-native-typed-storage [![Build Status](https://travis-ci.org/Kausta/react-native-typed-storage.svg?branch=master)](https://travis-ci.org/Kausta/react-native-typed-storage) [![npm version](https://badge.fury.io/js/react-native-typed-storage.svg)](https://badge.fury.io/js/react-native-typed-storage) [![Known Vulnerabilities](https://snyk.io/test/github/Kausta/react-native-typed-storage/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Kausta/react-native-typed-storage?targetFile=package.json) [![NpmLicense](https://img.shields.io/npm/l/react-native-typed-storage.svg)](./LICENSE)
  
- [![NPM](https://nodei.co/npm/@kausta%2Ftyped-storage.png)](https://nodei.co/npm/@kausta%2Ftyped-storage/)
+ [![NPM](https://nodei.co/npm/react-native-typed-storage.png)](https://nodei.co/npm/react-native-typed-storage/)
  
 Typed Storage for React Native
 - Small wrapper over Async Storage with automatic stringify, parsing

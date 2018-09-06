@@ -1,5 +1,5 @@
 {
-  "name": "@kausta/typed-storage",
+  "name": "react-native-typed-storage",
   "version": "0.0.1",
   "description": "Typed Async Storage",
   "main": "publish/index.js",
