@@ -7,7 +7,7 @@ Typed Storage for React Native
 
 ## :arrow_forward: How to Install
 
-1. Run `npm i --save react-native-typed storage` or `yarn add react-native-typed-storage` based on your preference
+1. Run `npm i --save react-native-typed-storage` or `yarn add react-native-typed-storage` based on your preference
 2. Import TypedStorage or createTypedStorage from react-native-typed-storage
 3. WIP More Examples and Docs
  
