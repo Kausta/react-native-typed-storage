@@ -3,7 +3,7 @@
  * @file TypedStorage.jsx
  * ----------------------------
  *
- * Copyright 2018 Caner Korkmaz
+ * Copyright 2018 - 2021 Caner Korkmaz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +32,8 @@ class TypedStorage extends TypedStorageBase<JSONConverter> {
    * Creates Typed Storage with the key prefix using JSON Converter
    * @param _keyPrefix Prefix of the storage
    */
-  constructor(_keyPrefix: string = '@typed') {
-    super(_keyPrefix, new JSONConverter())
+  constructor(_keyPrefix = '@typed') {
+    super(new JSONConverter(), _keyPrefix)
   }
 }
 

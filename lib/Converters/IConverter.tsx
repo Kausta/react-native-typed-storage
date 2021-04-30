@@ -3,7 +3,7 @@
  * @file IConverter.tsx
  * ----------------------------
  *
- * Copyright 2018 Caner Korkmaz
+ * Copyright 2018 - 2021 Caner Korkmaz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
  */
 
 export interface Converter {
-  encode<T>(value: null | T): string
+  encode: <T>(value: null | T) => string
 
-  decode<T>(str: string): null | T
+  decode: <T>(str: string) => null | T
 }
