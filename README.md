@@ -1,4 +1,4 @@
-# react-native-typed-storage [![Build Status](https://travis-ci.org/Kausta/react-native-typed-storage.svg?branch=master)](https://travis-ci.org/Kausta/react-native-typed-storage) [![npm version](https://badge.fury.io/js/react-native-typed-storage.svg)](https://badge.fury.io/js/react-native-typed-storage) [![Known Vulnerabilities](https://snyk.io/test/github/Kausta/react-native-typed-storage/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Kausta/react-native-typed-storage?targetFile=package.json) [![NpmLicense](https://img.shields.io/npm/l/react-native-typed-storage.svg)](./LICENSE)
+# react-native-typed-storage [![Build Status](https://travis-ci.org/Kausta/react-native-typed-storage.svg?branch=master)](https://travis-ci.org/Kausta/react-native-typed-storage) [![npm version](https://badge.fury.io/js/react-native-typed-storage.svg)](https://badge.fury.io/js/react-native-typed-storage) [![Known Vulnerabilities](https://snyk.io/test/github/Kausta/react-native-typed-storage/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Kausta/react-native-typed-storage?targetFile=package.json) [![NpmLicense](https://img.shields.io/npm/l/react-native-typed-storage.svg)](./LICENSE) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
  
  [![NPM](https://nodei.co/npm/react-native-typed-storage.png)](https://nodei.co/npm/react-native-typed-storage/)
  
@@ -27,9 +27,9 @@ Typed Storage for React Native
 1. cd to the repo
 2. Run `yarn build`
 
-## :no_entry_sign: Standard Compliant (as much as possible in TypeScript)
+## Standard Compliant
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
 
 This project adheres to Standard in TypeScript through tslint-config-standard with custom prettier.  Our CI enforces this, so we suggest you enable linting to keep your project compliant during development.
 
@@ -45,14 +45,13 @@ If you have to bypass lint for a special commit that you will come back and clea
 
 The linting rules are from JS Standard and React-Standard.  [Regular JS errors can be found with descriptions here](http://eslint.org/docs/rules/), while [React errors and descriptions can be found here](https://github.com/yannickcr/eslint-plugin-react).
 
- 
 ## Contributing
  
 Please read [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) for details on our code of conduct, and the process for submitting pull requests to us.
  
 ## License 
  
-Copyright © 2018 Caner Korkmaz
+Copyright © 2018-2021 Caner Korkmaz
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this repository except in compliance with the License.

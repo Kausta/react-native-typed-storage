@@ -3,7 +3,7 @@
  * @file TypedStorageBase.tsx
  * ----------------------------
  *
- * Copyright 2018 Caner Korkmaz
+ * Copyright 2018 - 2021 Caner Korkmaz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
  *
  */
 
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Converter } from './Converters'
 
 /**
@@ -27,20 +27,20 @@ import { Converter } from './Converters'
  * with given converter type
  *
  * @class TypedStorageBase
- * @type T Converter type
+ * @type C Converter type
  */
 export class TypedStorageBase<C extends Converter> {
   /**
    * Creates Typed Storage with the key prefix
-   * @param _keyPrefix Prefix of the storage
    * @param _converter Used to convert the values to and from string
+   * @param _keyPrefix Prefix of the storage
    */
-  constructor(private _keyPrefix: string = '@typed', private _converter: C) {}
+  constructor(private readonly _converter: C, private readonly _keyPrefix: string = '@typed') {}
 
   /**
    * Name prefix for the typed storage
    */
-  public get keyPrefix() {
+  public get keyPrefix(): string {
     return this._keyPrefix
   }
 
@@ -58,7 +58,6 @@ export class TypedStorageBase<C extends Converter> {
    */
   public async get<T>(key: string): Promise<T | null> {
     const value = await AsyncStorage.getItem(this.convertKey(key))
-    // tslint:disable-next-line:strict-type-predicates
     if (value === null || value === undefined) {
       return null
     }
@@ -72,8 +71,7 @@ export class TypedStorageBase<C extends Converter> {
   public async multiGet(keys: Array<{ key: string }>): Promise<Array<any | null>> {
     const values = await AsyncStorage.multiGet(keys.map(({ key }) => this.convertKey(key)))
     const decode = this._converter.decode
-    return values.map(([key, value]) => {
-      // tslint:disable-next-line:strict-type-predicates
+    return values.map(([_, value]) => {
       if (value === null || value === undefined) {
         return null
       }
@@ -97,7 +95,6 @@ export class TypedStorageBase<C extends Converter> {
    * @param value Value to convert to string and store, cannot be undefined
    */
   public async set<T>(key: string, value: T | null): Promise<void> {
-    // tslint:disable-next-line:strict-type-predicates
     if (value === undefined) {
       throw new Error('Set value cannot be undefined')
     }
@@ -111,7 +108,6 @@ export class TypedStorageBase<C extends Converter> {
   public async multiSet(values: Array<{ key: string; value: null | any }>): Promise<void> {
     const encode = this._converter.encode
     const stringValues = values.map(({ key, value }) => {
-      // tslint:disable-next-line:strict-type-predicates
       if (value === undefined) {
         throw new Error('Multi Set value cannot be undefined')
       }
@@ -126,7 +122,6 @@ export class TypedStorageBase<C extends Converter> {
    * @param value Value to merge, cannot be undefined
    */
   public async merge<T>(key: string, value: T | null): Promise<void> {
-    // tslint:disable-next-line:strict-type-predicates
     if (value === undefined) {
       throw new Error('Merge value cannot be undefined')
     }
@@ -140,7 +135,6 @@ export class TypedStorageBase<C extends Converter> {
   public async multiMerge(values: Array<{ key: string; value: null | any }>): Promise<void> {
     const encode = this._converter.encode
     const stringValues = values.map(({ key, value }) => {
-      // tslint:disable-next-line:strict-type-predicates
       if (value === undefined) {
         throw new Error('Multi Merge value cannot be undefined')
       }
@@ -177,9 +171,9 @@ export class TypedStorageBase<C extends Converter> {
 
 /**
  * Creates a typed storage with given prefix and given converter
- * @param keyPrefix Prefix for keys in the storage
  * @param converter The converter to convert objects and string
+ * @param keyPrefix Prefix for keys in the storage
  */
-export function createCustomTypedStorage<T extends Converter>(keyPrefix: string, converter: T): TypedStorageBase<T> {
-  return new TypedStorageBase(keyPrefix, converter)
+export function createCustomTypedStorage<T extends Converter>(converter: T, keyPrefix: string): TypedStorageBase<T> {
+  return new TypedStorageBase(converter, keyPrefix)
 }
