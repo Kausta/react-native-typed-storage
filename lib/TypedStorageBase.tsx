@@ -61,7 +61,7 @@ export class TypedStorageBase<C extends Converter> {
     if (value === null || value === undefined) {
       return null
     }
-    return this._converter.decode(value)
+    return await this._converter.decode(value)
   }
 
   /**
